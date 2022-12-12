@@ -3,14 +3,14 @@ import Sidebar from '../../components/sidebar/Sidebar';
 import Navbar from '../../components/navbar/Navbar';
 import DriveFolderUploadOutlinedIcon from '@mui/icons-material/DriveFolderUploadOutlined';
 
-const New = () => {
+const New = ({ inputs, title }) => {
   return (
     <div className='new'>
       <Sidebar />
       <div className='newContainer'>
         <Navbar />
         <div className='top'>
-          <h1>Add new user</h1>
+          <h1>{title}</h1>
         </div>
         <div className='bottom'>
           <div className='left'>
@@ -28,37 +28,14 @@ const New = () => {
                 </label>
                 <input type='file' id='file' style={{ display: 'none' }} />
               </div>
-              <div className='formInput'>
-                <label>Username</label>
-                <input type='text' placeholder='user_name' />
-              </div>
-              <div className='formInput'>
-                <label>Name and Surname</label>
-                <input type='text' placeholder='John Doe' />
-              </div>
-              <div className='formInput'>
-                <label>Email</label>
-                <input type='email' placeholder='user@gmail.com' />
-              </div>
-              <div className='formInput'>
-                <label>Phone</label>
-                <input type='text' placeholder='404-678-0000' />
-              </div>
-              <div className='formInput'>
-                <label>Password</label>
-                <input type='password' />
-              </div>
-              <div className='formInput'>
-                <label>Address</label>
-                <input
-                  type='text'
-                  placeholder='619 Hollywood Blvd, Allenwood, California'
-                />
-              </div>
-              <div className='formInput'>
-                <label>Country</label>
-                <input type='text' placeholder='U.S.A.' />
-              </div>
+              {/* this maps all of the inputs from the formSource files using props defined in app.js (title and inputs) */}
+              {inputs.map((input) => (
+                <div className='formInput' key={input.id}>
+                  <label>{input.label}</label>
+                  <input type={input.type} placeholder={input.placeholder} />
+                </div>
+              ))}
+
               <button>Send</button>
             </form>
           </div>
