@@ -16,9 +16,12 @@ const Featured = () => {
         <div className='featuredChart'>
           <CircularProgressbar value={70} text={'%70'} strokeWidth={5} />
         </div>
-        <p className='title'>Total sales made today</p>
+        <p className='title'>Total sales made today:</p>
         <p className='amount'>$420</p>
-        <p className='description'>Description here</p>
+        <p className='description'>
+          Today our total revenue clocks in at $420.00. Therefore, we are 70%
+          towards reaching our goal for today!
+        </p>
         <div className='summary'>
           <div className='item'>
             <div className='itemTitle'>Today</div>
