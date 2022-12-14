@@ -3,6 +3,7 @@ import Login from './pages/login/Login';
 import List from './pages/list/List';
 import Single from './pages/single/Single';
 import New from './pages/new/New';
+import Order from './pages/orders/orders'
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import { productInputs, userInputs } from './formSource';
 import './style/dark.scss';
@@ -35,6 +36,9 @@ function App() {
                   <New inputs={productInputs} title='Add New Products' />
                 }
               />
+            </Route>
+            <Route path='orders'>
+              <Route index element={<Order/>} />
             </Route>
           </Route>
         </Routes>
