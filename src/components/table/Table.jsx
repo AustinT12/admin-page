@@ -14,7 +14,7 @@ const List = () => {
       product: 'Acer Nitro 5',
       img: 'https://m.media-amazon.com/images/I/81bc8mA3nKL._AC_UY327_FMwebp_QL65_.jpg',
       customer: 'John Smith',
-      date: '1 March',
+      date: 'March 21',
       amount: 785,
       method: 'Cash on Delivery',
       status: 'Approved',
@@ -24,7 +24,7 @@ const List = () => {
       product: 'Playstation 5',
       img: 'https://m.media-amazon.com/images/I/31JaiPXYI8L._AC_UY327_FMwebp_QL65_.jpg',
       customer: 'Michael Doe',
-      date: '1 March',
+      date: 'March 30',
       amount: 900,
       method: 'Online Payment',
       status: 'Pending',
@@ -34,7 +34,7 @@ const List = () => {
       product: 'Redragon S101',
       img: 'https://m.media-amazon.com/images/I/71kr3WAj1FL._AC_UY327_FMwebp_QL65_.jpg',
       customer: 'John Smith',
-      date: '1 March',
+      date: 'April 3',
       amount: 35,
       method: 'Cash on Delivery',
       status: 'Pending',
@@ -44,7 +44,7 @@ const List = () => {
       product: 'Razer Blade 15',
       img: 'https://m.media-amazon.com/images/I/71wF7YDIQkL._AC_UY327_FMwebp_QL65_.jpg',
       customer: 'Jane Smith',
-      date: '1 March',
+      date: 'May 4',
       amount: 920,
       method: 'Online',
       status: 'Approved',
@@ -54,41 +54,41 @@ const List = () => {
       product: 'ASUS ROG Strix',
       img: 'https://m.media-amazon.com/images/I/81hH5vK-MCL._AC_UY327_FMwebp_QL65_.jpg',
       customer: 'Harold Carol',
-      date: '1 March',
+      date: 'June 16',
       amount: 2000,
       method: 'Online',
       status: 'Pending',
     },
   ];
   return (
-    <TableContainer component={Paper} className="table">
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
+    <TableContainer component={Paper} className='table'>
+      <Table sx={{ minWidth: 650 }} aria-label='simple table'>
         <TableHead>
           <TableRow>
-            <TableCell className="tableCell">Tracking ID</TableCell>
-            <TableCell className="tableCell">Product</TableCell>
-            <TableCell className="tableCell">Customer</TableCell>
-            <TableCell className="tableCell">Date</TableCell>
-            <TableCell className="tableCell">Amount</TableCell>
-            <TableCell className="tableCell">Payment Method</TableCell>
-            <TableCell className="tableCell">Status</TableCell>
+            <TableCell className='tableCell'>Tracking ID</TableCell>
+            <TableCell className='tableCell'>Product</TableCell>
+            <TableCell className='tableCell'>Customer</TableCell>
+            <TableCell className='tableCell'>Date</TableCell>
+            <TableCell className='tableCell'>Amount</TableCell>
+            <TableCell className='tableCell'>Payment Method</TableCell>
+            <TableCell className='tableCell'>Status</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map((row) => (
             <TableRow key={row.id}>
-              <TableCell className="tableCell">{row.id}</TableCell>
-              <TableCell className="tableCell">
-                <div className="cellWrapper">
-                  <img src={row.img} alt="" className="image" />
+              <TableCell className='tableCell'>{row.id}</TableCell>
+              <TableCell className='tableCell'>
+                <div className='cellWrapper'>
+                  <img src={row.img} alt='' className='image' />
                   {row.product}
                 </div>
               </TableCell>
-              <TableCell className="tableCell">{row.customer}</TableCell>
-              <TableCell className="tableCell">{row.date}</TableCell>
-              <TableCell className="tableCell">{row.amount}</TableCell>
-              <TableCell className="tableCell">{row.method}</TableCell>
-              <TableCell className="tableCell">
+              <TableCell className='tableCell'>{row.customer}</TableCell>
+              <TableCell className='tableCell'>{row.date}</TableCell>
+              <TableCell className='tableCell'>${row.amount}</TableCell>
+              <TableCell className='tableCell'>{row.method}</TableCell>
+              <TableCell className='tableCell'>
                 {/* this line of  code gets the class name of "status(string) + the status defined in the rows table" */}
                 <span className={`status ${row.status}`}>{row.status}</span>
               </TableCell>
@@ -97,7 +97,7 @@ const List = () => {
         </TableBody>
       </Table>
     </TableContainer>
-  );;
+  );
 };
 
 export default List;
